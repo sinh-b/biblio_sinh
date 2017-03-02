@@ -1,5 +1,10 @@
 package metier;
 
+/**
+ * 
+ * @author S.BUI
+ *
+ */
 public enum EnumCategorieEmploye {
 
 	BIBLIOTHECAIRE,

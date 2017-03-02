@@ -3,14 +3,26 @@ package metier;
 
 import java.util.Date;
 
+/**
+ *
+ * @author A.CONSEIL
+ *
+ */
+
 public class Adherent extends Utilisateur{
 	
+
+	/*** Le numéro de téléphone de l'adhérent*/
 	private String telephone;
+	/*** Le nombre de prêts simultanés maximum.*/
 	private static final int nbMaxPrets = 3;
+	/*** La durée maximum d'un emprunt (en jours) avant qu'il ne soit considéré en retard
+	 * @see isEmpruntEnRetard
+	 */
 	private static final int dureeMaxPrets = 15;
 	
-	
-	// constructeur
+// COSNTRUCTEURS	
+
 	public Adherent(String nom, String prenom, Date dateNaissance, String sexe, String pwd, String pseudonyme, int idUtilisateur,String telephone){
 		super(nom, prenom, dateNaissance, sexe, pwd, pseudonyme, idUtilisateur);
 		this.setTelephone(telephone);
@@ -22,22 +34,20 @@ public class Adherent extends Utilisateur{
 	}
 	
 	
+// GETTERS & SETTERS 	
 	
-	
-	
-	// getter & setter
 
-	
 	public String getTelephone(){
 		return telephone;
 	}
+	
 	public static int getDureeMaxPrets() {
 		return dureeMaxPrets;
 	}
+	
 	public void setTelephone(String telephone) {
-		
 		this.telephone = telephone;
-		
+		}
 //		if(telephone.length()!=10 ){// biblioException??
 //			throw new BiblioException("Le numero de telephone ne contient pas le bon nombre de caractères");
 //		}
@@ -48,13 +58,16 @@ public class Adherent extends Utilisateur{
 //			System.out.println("chaine OK");
 //		}
 
-	}
 	
 	
 	
 	
-	//methodes
+	
+// METHODES
 
+	/**
+	 * Méthode permettant de vérifier qu'un utilisateur est en droit d'effectuer un emprunt.
+	 */
 	@Override
 	public boolean isConditionsPretAcceptees(){
 
@@ -64,11 +77,13 @@ public class Adherent extends Utilisateur{
 			return false;
 		else
 			return true;
-
 	}
 
 
-
+/**
+ * Méthode permettant de connaître le nombre d'emprunts en cours, dont la date de restitution est dépassée.
+ * @return Le nombre de retards sur les emprunts tenus par un Utilisateur
+ */
 	public int getNbRetards(){
 		int i = 0;
 		for (EmpruntEnCours e : getListeEmprunt()){

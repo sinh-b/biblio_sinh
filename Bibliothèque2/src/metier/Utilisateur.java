@@ -2,21 +2,31 @@ package metier;
 
 import java.util.ArrayList;
 import java.util.Date;
-
+/**
+ * 
+ * @author A.CONSEIL
+ *
+ */
 public class Utilisateur extends Personne{
 	
+	/** La liste des emprunts en cours d'un Utilisateur */
 	private ArrayList<EmpruntEnCours> listeEmprunt = new ArrayList<EmpruntEnCours>();
+	
+	/** L'identifiant d'un Utilisateur **/
 	private int idUtilisateur;
+	
+	/** Le mot de passe d'un Utilisateur **/
 	private String pwd;
+	
+	/** Le pseudonyme d'un Utilisateur **/
 	private String pseudonyme;
 	
 	
-	// constructeurs
+// CONSTRUCTEURS 
+	
 	public Utilisateur() {
-		this("Nom Inconnu","Prenom Inconnu",new Date(0),"Sexe Inconnu","pwd Inconnu","Pseudonyme Inconnu",0);
+		this("Nom Inconnu","Prenom Inconnu",new Date(0),"Sexe Inconnu","Mot de passe Inconnu","Pseudonyme Inconnu",0);
 	}
-	
-	
 	
 	public Utilisateur(String nom, String prenom, Date dateNaissance, String sexe, String pwd, String pseudonyme, int idUtilisateur) {
 		super(nom, prenom, dateNaissance, sexe);
@@ -26,9 +36,7 @@ public class Utilisateur extends Personne{
 	}
 	
 	
-	
-	
-	//getter & setter
+// GETTERS SETTERS 
 	
 	public int getIdUtilisateur(){
 		return idUtilisateur;		
@@ -53,26 +61,26 @@ public class Utilisateur extends Personne{
 		this.pseudonyme=pseudonyme;
 	}
 	
-	
-	
-	
-	
-	// methodes
-	
-	public boolean isConditionsPretAcceptees(){
-		return true;
-	}
-	
-	public void addEmpruntEnCours(EmpruntEnCours emprunt) throws BiblioException{
-		listeEmprunt.add(emprunt);
-		emprunt.setUtilisateur(this);
-	}
-	
 	public ArrayList<EmpruntEnCours> getEmpruntsEnCours(){
 		return listeEmprunt ;
 	}
 	public int getNbEmpruntsEnCours(){
 		return listeEmprunt.size();
+	}
+	
+	
+	
+// METHODES
+
+	
+	public boolean isConditionsPretAcceptees(){
+		return true;
+	}
+
+	/** Ajouter un emprunt dans la liste des EmpruntsEnCours d'un Utilisateur **/
+	public void addEmpruntEnCours(EmpruntEnCours emprunt) throws BiblioException{
+		listeEmprunt.add(emprunt);
+		emprunt.setUtilisateur(this);
 	}
 	
 	@Override

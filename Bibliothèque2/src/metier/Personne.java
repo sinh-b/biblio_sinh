@@ -3,14 +3,31 @@ package metier;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 
+ * @author A.CONSEIL
+ *
+ */
 public class Personne {
+	
+	/** Le nom de la Personne **/
 	private String nom;
+	
+	/** Le prénom de la Personne **/
 	private String prenom;
+	
+	/** La date de naissance de la Personne **/
 	private Date dateNaissance;
+	
+	/** Le sexe de la personne **/
 	private String sexe;
+	
+	/** Objet utilisé pour formatter les dates **/
 	protected static final SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 	
+
 	
+// CONSTRUCTEURS 	
 	
 	public Personne(){
 		this("Nom Inconnu","Prenom Inconnu",new Date(0),"Sexe Inconnu");
@@ -25,7 +42,7 @@ public class Personne {
 		}
 	
 	
-	
+// GETTERS SETTERS	
 	
 	public String getNom(){
 		return nom;		
@@ -52,7 +69,7 @@ public class Personne {
 		this.sexe=sexe;
 	}
 	
-	
+// METHODES	
 	
 	@Override
 	public String toString() {

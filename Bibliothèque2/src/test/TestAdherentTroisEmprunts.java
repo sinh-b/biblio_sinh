@@ -3,11 +3,11 @@ package test;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import dao.UtilisateursDAO;
 import metier.Adherent;
 import metier.BiblioException;
 import metier.EmpruntEnCours;
 import metier.Utilisateur;
-import metier.UtilisateursDAO;
 
 public class TestAdherentTroisEmprunts {
 
