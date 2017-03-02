@@ -5,7 +5,7 @@ import java.util.GregorianCalendar;
 
 import metier.BiblioException;
 import metier.Employe;
-import metier.Employe.EnumCategorieEmploye;
+import metier.EnumCategorieEmploye;
 import metier.EmpruntEnCours;
 import metier.Utilisateur;
 

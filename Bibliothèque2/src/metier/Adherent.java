@@ -1,6 +1,6 @@
 package metier;
 
-import java.text.SimpleDateFormat;
+
 import java.util.Date;
 
 public class Adherent extends Utilisateur{
@@ -11,12 +11,13 @@ public class Adherent extends Utilisateur{
 	
 	
 	// constructeur
-	public Adherent(String nom, String prenom, Date dateNaissance, String sexe, String pwd, String pseudonyme, int idUtilisateur,String telephone) throws BiblioException{
+	public Adherent(String nom, String prenom, Date dateNaissance, String sexe, String pwd, String pseudonyme, int idUtilisateur,String telephone){
 		super(nom, prenom, dateNaissance, sexe, pwd, pseudonyme, idUtilisateur);
 		this.setTelephone(telephone);
 	}
 	
-	public Adherent() throws BiblioException{
+	
+	public Adherent(){
 		this("nomInconnu","prenomInconnu",new Date(0),"sexeInconnu","pwdInconnu","pseudoInconnu",0, "noTelInconnu");
 	}
 	
@@ -33,17 +34,19 @@ public class Adherent extends Utilisateur{
 	public static int getDureeMaxPrets() {
 		return dureeMaxPrets;
 	}
-	public void setTelephone(String telephone)throws BiblioException {
-
-		if(telephone.length()!=10 ){// biblioException??
-			throw new BiblioException("Le numero de telephone ne contient pas le bon nombre de caractères");
-		}
-		else if(telephone.matches(".*[a-zA-Z].*")){
-			throw new BiblioException("Le numero de telephone ne peut pas contenir de lettres");
-		}
-		else{
-			System.out.println("chaine OK");
-		}
+	public void setTelephone(String telephone) {
+		
+		this.telephone = telephone;
+		
+//		if(telephone.length()!=10 ){// biblioException??
+//			throw new BiblioException("Le numero de telephone ne contient pas le bon nombre de caractères");
+//		}
+//		else if(telephone.matches(".*[a-zA-Z].*")){
+//			throw new BiblioException("Le numero de telephone ne peut pas contenir de lettres");
+//		}
+//		else{
+//			System.out.println("chaine OK");
+//		}
 
 	}
 	
