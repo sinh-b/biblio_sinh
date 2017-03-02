@@ -13,17 +13,22 @@ public class Utilisateur extends Personne{
 	
 	// constructeurs
 	public Utilisateur() {
-		this("nomInconnu","prenomInconnu",new Date(0),"sexeInconnu","pwdInconnu","pseudonymeInconnu",0);
+		this("Nom Inconnu","Prenom Inconnu",new Date(0),"Sexe Inconnu","pwd Inconnu","Pseudonyme Inconnu",0);
 	}
+	
+	
+	
 	public Utilisateur(String nom, String prenom, Date dateNaissance, String sexe, String pwd, String pseudonyme, int idUtilisateur) {
 		super(nom, prenom, dateNaissance, sexe);
-		this.idUtilisateur=idUtilisateur;
-		this.pseudonyme=pseudonyme;
-		this.pwd=pwd;
+		this.setIdUtilisateur(idUtilisateur);
+		this.setPseudonyme(pseudonyme);
+		this.setPwd(pwd);
 	}
+	
+	
+	
+	
 	//getter & setter
-	
-	
 	
 	public int getIdUtilisateur(){
 		return idUtilisateur;		
@@ -47,18 +52,22 @@ public class Utilisateur extends Personne{
 	public void setPseudonyme(String pseudonyme){
 		this.pseudonyme=pseudonyme;
 	}
+	
+	
+	
+	
+	
 	// methodes
 	
 	public boolean isConditionsPretAcceptees(){
 		return true;
 	}
 	
-	
-	
 	public void addEmpruntEnCours(EmpruntEnCours emprunt) throws BiblioException{
 		listeEmprunt.add(emprunt);
 		emprunt.setUtilisateur(this);
 	}
+	
 	public ArrayList<EmpruntEnCours> getEmpruntsEnCours(){
 		return listeEmprunt ;
 	}
@@ -68,7 +77,6 @@ public class Utilisateur extends Personne{
 	
 	@Override
 	public String toString() {
-		
-		return "Date naissance : " + Personne.df.format(getdateNaissance());
+		return super.toString()+ "Pseudonyme: " + pseudonyme + ", pwd: " + pwd + ", idUtilisateur: " + idUtilisateur;
 	}
 }

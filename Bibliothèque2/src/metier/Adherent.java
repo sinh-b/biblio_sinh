@@ -11,13 +11,12 @@ public class Adherent extends Utilisateur{
 	
 	
 	// constructeur
-	public Adherent(String nom, String prenom, Date dateNaissance, String sexe, String pwd, String pseudonyme,
-			int idUtilisateur,String telephone) {
+	public Adherent(String nom, String prenom, Date dateNaissance, String sexe, String pwd, String pseudonyme, int idUtilisateur,String telephone) throws BiblioException{
 		super(nom, prenom, dateNaissance, sexe, pwd, pseudonyme, idUtilisateur);
-		this.telephone=telephone;
+		this.setTelephone(telephone);
 	}
 	
-	public Adherent(){
+	public Adherent() throws BiblioException{
 		this("nomInconnu","prenomInconnu",new Date(0),"sexeInconnu","pwdInconnu","pseudoInconnu",0, "noTelInconnu");
 	}
 	
@@ -26,6 +25,8 @@ public class Adherent extends Utilisateur{
 	
 	
 	// getter & setter
+
+	
 	public String getTelephone(){
 		return telephone;
 	}

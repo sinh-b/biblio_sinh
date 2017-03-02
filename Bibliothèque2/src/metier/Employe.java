@@ -6,12 +6,14 @@ import java.util.Date;
 public class Employe extends Utilisateur {
 
 	private String codeMatricule;
-	public enum EnumCategorieEmploye{BIBLIOTHECAIRE, RESPONSABLE, GESTIONNAIRE_DE_FOND};
 	private EnumCategorieEmploye EnumCategorieEmploye; 
+	
 	public Employe(){
 		this("nomInconnu","prenomInconnu",new Date(0),"sexeInconnu","pwdInconnu","pseudonymeInconnu",
 			0,"codeMatriculeInconnu");
 	}
+	
+	
 	public Employe(String nom, String prenom, Date dateNaissance, String sexe, String pwd, String pseudonyme,
 			int idUtilisateur, String codeMatricule) {
 		super(nom, prenom, dateNaissance, sexe, pwd, pseudonyme, idUtilisateur);
@@ -31,6 +33,14 @@ public class Employe extends Utilisateur {
 	public EnumCategorieEmploye getEnumCategorieEmploye(){
 		return EnumCategorieEmploye;	
 	}
+	
+	@Override
+	public String toString() {
+		
+		return super.toString() + ", Code Matricule : " + codeMatricule + ", Catégorie employé : " + 
+		EnumCategorieEmploye;
+	}
+	
 	
 	
 }
