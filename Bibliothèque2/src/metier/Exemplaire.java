@@ -30,7 +30,7 @@ public class Exemplaire {
 		return empruntConcerne;
 	}
 
-	public void setEmpruntConcerne(EmpruntEnCours empruntConcerne) {
+	public void setEmpruntConcerne(EmpruntEnCours empruntConcerne) throws BiblioException {
 		this.empruntConcerne = empruntConcerne;
 		if (empruntConcerne.getExemplaire() == null)
 		empruntConcerne.setExemplaire(this);
