@@ -5,12 +5,14 @@ import java.util.GregorianCalendar;
 import metier.BiblioException;
 import metier.Employe;
 import metier.EmpruntEnCours;
+import metier.Utilisateur;
+import metier.UtilisateursDAO;
 
 public class TestEmployeTroisEmprunts {
 
 	public static void main(String[] args) throws BiblioException {
-		Employe u1 = new Employe("ratde","bibliotheque",new GregorianCalendar(1985,5,27).getTime(),"femme","admin","adminbiblio",
-				8,"1ff5562f7z");
+		UtilisateursDAO ud1 =new UtilisateursDAO();
+		Utilisateur u1 = ud1.findByKey(1);
 		EmpruntEnCours e1 = new EmpruntEnCours();
 		EmpruntEnCours e2 = new EmpruntEnCours();
 		EmpruntEnCours e3 = new EmpruntEnCours();

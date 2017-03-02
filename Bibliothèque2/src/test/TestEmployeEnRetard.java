@@ -8,17 +8,17 @@ import metier.Employe;
 import metier.EnumCategorieEmploye;
 import metier.EmpruntEnCours;
 import metier.Utilisateur;
+import metier.UtilisateursDAO;
 
 public class TestEmployeEnRetard {
 
 	public static void main(String[] args) throws BiblioException {
-		Employe u1 = new Employe("ratde","bibliotheque",new GregorianCalendar(1985,5,27).getTime(),"femme","admin","adminbiblio",
-		8,"1ff5562f7z");
+		UtilisateursDAO ud1 =new UtilisateursDAO();
+		Utilisateur u1 = ud1.findByKey(1);
 		EmpruntEnCours emprunt1 = new EmpruntEnCours(new GregorianCalendar(2017,1,10).getTime(),u1);
-		u1.setEnumCategorieEmploye(EnumCategorieEmploye.BIBLIOTHECAIRE);
 		u1.addEmpruntEnCours(emprunt1);
 		System.out.println(emprunt1.isEmpruntEnRetard());
 		System.out.println(u1.isConditionsPretAcceptees());
 	}
-
+	
 }
