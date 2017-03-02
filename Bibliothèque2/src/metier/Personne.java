@@ -13,7 +13,7 @@ public class Personne {
 	
 	
 	public Personne(){
-		this("nomInconnu","prenomInconnu",new Date(0),"sexeInconnu");
+		this("Nom Inconnu","Prenom Inconnu",new Date(0),"Sexe Inconnu");
 	}
 	
 	
@@ -51,4 +51,14 @@ public class Personne {
 	public void setSexe(String sexe){
 		this.sexe=sexe;
 	}
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Personne [nom=" + nom + ", prenom=" + prenom + ", dateNaissance=" + df.format(dateNaissance) + ", sexe=" + sexe
+				+ "]";
+	}
+	
+	
 }
