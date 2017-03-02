@@ -68,7 +68,7 @@ public class EmpruntEnCours {
 
 	public void setUtilisateur(Utilisateur utilisateur) throws BiblioException{
 		this.utilisateur = utilisateur;
-		if (!utilisateur.getEmpruntEnCours().contains(this))
+		if (!utilisateur.getEmpruntsEnCours().contains(this))
 		utilisateur.addEmpruntEnCours(this);
 
 	}

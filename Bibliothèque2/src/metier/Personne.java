@@ -6,25 +6,34 @@ import java.util.Date;
 public class Personne {
 	private String nom;
 	private String prenom;
-	private SimpleDateFormat dateNaissance;
+	private Date dateNaissance;
 	private String sexe;
-	private static final SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+	protected static final SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+	
+	
+	
 	public Personne(){
-		this("nomInconnu","prenomInconnu",new SimpleDateFormat("01/01/1970"),"sexeInconnu");
+		this("nomInconnu","prenomInconnu",new Date(0),"sexeInconnu");
 	}
-	public Personne(String nom, String prenom, SimpleDateFormat simpleDateFormat, String sexe){
-		this.nom = nom;
-		this.prenom = prenom;
-		this.dateNaissance = simpleDateFormat;
-		this.sexe = sexe;
+	
+	
+	public Personne(String nom, String prenom, Date dateNaissance, String sexe){
+		this.setNom(nom);
+		this.setPrenom(prenom);
+		this.setDateNaissance(dateNaissance);
+		this.setSexe(sexe);
 		}
+	
+	
+	
+	
 	public String getNom(){
 		return nom;		
 	}
 	public String getPrenom(){
 		return prenom;		
 	}
-	public SimpleDateFormat getdateNaissance(){
+	public Date getdateNaissance(){
 		return dateNaissance;		
 	}
 	public String getSexe(){
@@ -36,7 +45,7 @@ public class Personne {
 	public void setPrenom(String prenom){
 		this.prenom=prenom;
 	}
-	public void setDateNaissance(SimpleDateFormat dateNaissance){
+	public void setDateNaissance(Date dateNaissance){
 		this.dateNaissance=dateNaissance;
 	}
 	public void setSexe(String sexe){
