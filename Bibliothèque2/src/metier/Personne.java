@@ -58,6 +58,7 @@ public class Personne {
 	public String toString() {
 		return "Personne [nom=" + nom + ", prenom=" + prenom + ", dateNaissance=" + df.format(dateNaissance) + ", sexe=" + sexe
 				+ "]";
+		
 	}
 	
 	
