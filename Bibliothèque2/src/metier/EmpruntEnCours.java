@@ -48,11 +48,11 @@ public class EmpruntEnCours {
 // GETTERS SETTERS	
 	
 	public void setExemplaire(Exemplaire e) throws BiblioException{
-		this.exemplaire = e;
-		e.setEmpruntConcerne(this);
 		if (e.getStatus() == EnumStatusExemplaire.PRETE){
 			throw new BiblioException("Exemplaire déjà emprunté");
 		} else {
+		this.exemplaire = e;
+		e.setEmpruntConcerne(this);
 		e.setStatus(EnumStatusExemplaire.PRETE);
 		}
 	}

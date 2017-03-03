@@ -64,6 +64,19 @@ public class Adherent extends Utilisateur{
 	
 	
 // METHODES
+	
+	/** Ajouter un emprunt dans la liste des EmpruntsEnCours d'un Utilisateur **/
+	public void addEmpruntEnCours(EmpruntEnCours emprunt) throws BiblioException{
+		if (isConditionsPretAcceptees() == true){
+		getListeEmprunt().add(emprunt);
+		emprunt.setUtilisateur(this);
+		}else {
+			throw new BiblioException("Conditions emprunts non remplies");
+		}
+		
+	}
+	
+	
 
 	/**
 	 * Méthode permettant de vérifier qu'un utilisateur est en droit d'effectuer un emprunt.
