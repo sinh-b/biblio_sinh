@@ -2,6 +2,8 @@ package test;
 
 import java.util.Date;
 
+import javax.swing.JOptionPane;
+
 import dao.ExemplairesDao;
 import dao.UtilisateursDAO;
 import metier.Adherent;
@@ -15,7 +17,10 @@ public class TestDeBase {
 
 	public static void main(String[] args) throws BiblioException {
 	
-	System.out.println("Instanciation de ExemplairesDAO");
+		
+		
+		
+	
 	ExemplairesDao exDao = new ExemplairesDao();
 	System.out.println("Récupération de deux exemplaires. Méthode findByKey()");
 	Exemplaire ex0 = exDao.findByKey(1);
