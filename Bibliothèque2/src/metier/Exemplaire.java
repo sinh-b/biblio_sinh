@@ -13,16 +13,16 @@ public class Exemplaire {
 	/** L'identifiant d'un Exemplaire de Livre **/ 
 	private int idExemplaire;
 	
-	/** La date d'achat de l'Exemplaire par la Bibliothèque **/
+	/** La date d'achat de l'Exemplaire par la Bibliothï¿½que **/
 	private Date dateAchat;
 	
-	/** Le statut de disponiblité d'un exemplaire **/
+	/** Le statut de disponiblitï¿½ d'un exemplaire **/
 	private EnumStatusExemplaire status;
 	
-	/** Le numéro ISBN du Livre auquel se rapport un Exemplaire **/
+	/** Le numï¿½ro ISBN du Livre auquel se rapport un Exemplaire **/
 	private String isbn;
 	
-	/** L'Emprunt auquel un livre est rattaché **/
+	/** L'Emprunt auquel un livre est rattachï¿½ **/
 	private EmpruntEnCours empruntConcerne;
 	
 	
@@ -90,9 +90,17 @@ public class Exemplaire {
 	
 // METHODES 	
 	
+	public void retourExemplaire(){
+		this.setStatus(EnumStatusExemplaire.DISPONIBLE);
+		this.getEmpruntConcerne().getUtilisateur().removeEmpruntEnCours(empruntConcerne);
+		EmpruntArchive empruntArchive = new EmpruntArchive(this, empruntConcerne.getDateEmprunt(), new Date());
+		empruntConcerne = null;
+		
+	}
+	
 	@Override
 	public String toString() {
-		return "idExemplaire : " + idExemplaire + ", ISBN : " + isbn + ", Emprunt concerné : " + empruntConcerne + ", Status : " + status;
+		return "idExemplaire : " + idExemplaire + ", ISBN : " + isbn + ", Emprunt concernï¿½ : " + empruntConcerne + ", Status : " + status;
 	}
 
 }

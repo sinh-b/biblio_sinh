@@ -12,11 +12,11 @@ import java.util.Date;
 public class Adherent extends Utilisateur{
 	
 
-	/*** Le numéro de téléphone de l'adhérent*/
+	/*** Le numï¿½ro de tï¿½lï¿½phone de l'adhï¿½rent*/
 	private String telephone;
-	/*** Le nombre de prêts simultanés maximum.*/
+	/*** Le nombre de prï¿½ts simultanï¿½s maximum.*/
 	private static final int nbMaxPrets = 3;
-	/*** La durée maximum d'un emprunt (en jours) avant qu'il ne soit considéré en retard
+	/*** La durï¿½e maximum d'un emprunt (en jours) avant qu'il ne soit considï¿½rï¿½ en retard
 	 * @see isEmpruntEnRetard
 	 */
 	private static final int dureeMaxPrets = 15;
@@ -49,7 +49,7 @@ public class Adherent extends Utilisateur{
 		this.telephone = telephone;
 		}
 //		if(telephone.length()!=10 ){// biblioException??
-//			throw new BiblioException("Le numero de telephone ne contient pas le bon nombre de caractères");
+//			throw new BiblioException("Le numero de telephone ne contient pas le bon nombre de caractï¿½res");
 //		}
 //		else if(telephone.matches(".*[a-zA-Z].*")){
 //			throw new BiblioException("Le numero de telephone ne peut pas contenir de lettres");
@@ -76,10 +76,12 @@ public class Adherent extends Utilisateur{
 		
 	}
 	
+
+	
 	
 
 	/**
-	 * Méthode permettant de vérifier qu'un utilisateur est en droit d'effectuer un emprunt.
+	 * Mï¿½thode permettant de vï¿½rifier qu'un utilisateur est en droit d'effectuer un emprunt.
 	 */
 	@Override
 	public boolean isConditionsPretAcceptees(){
@@ -94,7 +96,7 @@ public class Adherent extends Utilisateur{
 
 
 /**
- * Méthode permettant de connaître le nombre d'emprunts en cours, dont la date de restitution est dépassée.
+ * Mï¿½thode permettant de connaï¿½tre le nombre d'emprunts en cours, dont la date de restitution est dï¿½passï¿½e.
  * @return Le nombre de retards sur les emprunts tenus par un Utilisateur
  */
 	public int getNbRetards(){

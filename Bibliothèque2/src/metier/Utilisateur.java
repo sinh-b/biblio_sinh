@@ -83,6 +83,10 @@ public class Utilisateur extends Personne{
 		emprunt.setUtilisateur(this);
 	}
 	
+	public void removeEmpruntEnCours(EmpruntEnCours emprunt) {
+		getListeEmprunt().remove(emprunt);
+	}
+	
 	@Override
 	public String toString() {
 		return super.toString()+ "Pseudonyme: " + pseudonyme + ", pwd: " + pwd + ", idUtilisateur: " + idUtilisateur;
