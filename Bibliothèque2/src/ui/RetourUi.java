@@ -4,12 +4,15 @@ import java.util.Date;
 
 import dao.ExemplairesDao;
 import dao.UtilisateursDAO;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import metier.BiblioException;
 import metier.EmpruntEnCours;
@@ -38,6 +41,9 @@ public class RetourUi {
 		GridPane.setConstraints(tfRetourExemplaire, 0, 1);
 		GridPane.setConstraints(b1, 0, 2);
 		grid.getChildren().addAll(lab1,b1,tfRetourExemplaire);
+		grid.setAlignment(Pos.CENTER);
+		lab1.setFont(new Font (20));
+		GridPane.setHalignment(b1,HPos.CENTER);
 		Scene scene = new Scene (grid, 400,400);
 		fenetreEmprunt.setScene(scene);
 		fenetreEmprunt.setTitle("Retour");
