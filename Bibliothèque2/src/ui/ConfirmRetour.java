@@ -28,7 +28,8 @@ public class ConfirmRetour {
 		fenetreok.setScene(scene);
 		fenetreok.setTitle("Retour ok");
 		fenetreok.show();
-		bok.setOnAction(e -> {fenetreok.close();});
+		bok.setOnAction(e -> {fenetreok.close();
+		});
 
 	}
 }

@@ -65,7 +65,7 @@ public class Utilisateur extends Personne{
 		return listeEmprunt ;
 	}
 	public int getNbEmpruntsEnCours(){
-		return listeEmprunt.size();
+		return listeEmprunt.size(); // .size pour une liste et non .length
 	}
 	
 	

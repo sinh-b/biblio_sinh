@@ -50,8 +50,18 @@ public class RetourUi {
 		fenetreEmprunt.show();
 		
 		b1.setOnAction(e -> {
-			if(emprunt1.getExemplaire().getIdExemplaire()== Integer.parseInt(tfRetourExemplaire.getText()) ){
+			int x=0;
+			boolean error = false;
+			try{
+				x=Integer.parseInt(tfRetourExemplaire.getText());
+			}catch(	NumberFormatException ex){
+				ex.printStackTrace();
+				AlertBox.afficher("Mauvais format" , "Vous devez entrer un nombre !!");
+				error = true;
+			}
+			if(emprunt1.getExemplaire().getIdExemplaire()== x && error == false){
 				l1.retourExemplaire();
+				System.out.println(u1.getListeEmprunt());
 				try {
 					ConfirmRetour.afficher();
 				} catch (BiblioException e1) {
@@ -60,9 +70,13 @@ public class RetourUi {
 				}
 				fenetreEmprunt.close();
 			}
-			else {
+			else if(error ==true){
+				
+			}
+			else{
 				FailRetour.afficher();
 				fenetreEmprunt.close();
+				
 			}
 		});
 			

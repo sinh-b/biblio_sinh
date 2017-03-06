@@ -1,15 +1,20 @@
 package ui;
 
+
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import metier.BiblioException;
 import metier.EmpruntEnCours;
+import metier.Exemplaire;
+import metier.Utilisateur;
 
 import java.util.Date;
 
@@ -61,11 +66,23 @@ public class EmpruntUi{
 		fenetreEmprunt.setTitle("Emprunter");
 		fenetreEmprunt.show();
 		OKButton.setOnAction(e -> {
-			int y =Integer.parseInt(exemplaireTF.getText());
-			int x = Integer.parseInt(userTF.getText());
+			Exemplaire exe1 = null;
+			boolean error = false;
+			int y=0;
+			int x=0;
+			try{
+			 y =Integer.parseInt(exemplaireTF.getText());
+			 x = Integer.parseInt(userTF.getText());
+			}catch(	NumberFormatException ex){
+				ex.printStackTrace();
+				AlertBox.afficher("Mauvais format" , "Vous devez entrer un nombre !!");
+				error=true;
+			}
+		
 			EmpruntEnCours emp1;
 			while(j<daoex.exemplairesDB.length){
 				if(y==daoex.exemplairesDB[j].getIdExemplaire()){
+					exe1 = daoex.findByKey(y);
 					boolex=true;
 					break;
 				}
@@ -81,24 +98,28 @@ public class EmpruntUi{
 			}
 			//System.out.println(x);
 			while(i<dao1.utilisateurDB.length){
-				if(x == (dao1.utilisateurDB [i].getIdUtilisateur())&&boolex==true){
-					
-						try {
-							dao1.utilisateurDB[i].addEmpruntEnCours(emp1 = new EmpruntEnCours());
-							emp1.setUtilisateur(dao1.utilisateurDB[i]);
-							emp1.setExemplaire(daoex.exemplairesDB[j]);
+				if(x == (dao1.utilisateurDB [i].getIdUtilisateur())&&boolex==true&&error==false){
+					Utilisateur u1 = dao1.findByKey(x);
+						try{
+							EmpruntEnCours e1 = new EmpruntEnCours(new Date(), u1, exe1);
+							//dao1.utilisateurDB[i].addEmpruntEnCours(emp1 = new EmpruntEnCours());
+							//emp1.setUtilisateur(dao1.utilisateurDB[i]);
+							//emp1.setExemplaire(daoex.exemplairesDB[j]);
+							ConfirmEmprunt.afficher();
+							fenetreEmprunt.close();
+							break;
 						} catch (BiblioException e2) {
 							// TODO Auto-generated catch block
 							e2.printStackTrace();
+							FailEmprunt.afficher();
+							fenetreEmprunt.close();
+							break;
 						}
 						
-					System.out.println(dao1.utilisateurDB[i].getNom());
-					System.out.println(daoex.exemplairesDB[j].getIdExemplaire());
-					ConfirmEmprunt.afficher();
-					fenetreEmprunt.close();
-					break;
+					
+					
 				}
-				else if(i==dao1.utilisateurDB.length-1||boolex==false){
+				else if((i==dao1.utilisateurDB.length-1||boolex==false )&&error ==false){
 					FailEmprunt.afficher();
 					fenetreEmprunt.close();
 					break;
