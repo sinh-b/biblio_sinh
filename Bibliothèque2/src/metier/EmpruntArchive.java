@@ -58,7 +58,7 @@ public class EmpruntArchive {
 	
 	@Override
 	public String toString() {
-		return "[EmpruntArchivé] Exemplaire concerné : " + exemplaire.getIsbn() + ", Date restitution effective : "
+		return "Exemplaire concerné : " + exemplaire.getIdExemplaire() + ", Date restitution effective : "
 				+ sdf.format(dateRestitutionEff) + ", Date emprunt : " + sdf.format(dateEmprunt);
 	}
 	

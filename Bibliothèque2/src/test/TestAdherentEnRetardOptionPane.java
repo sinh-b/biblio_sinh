@@ -3,10 +3,12 @@ package test;
 import java.util.GregorianCalendar;
 
 import javax.swing.JOptionPane;
+
 import dao.ExemplairesDao;
 import dao.UtilisateursDAO;
 import metier.Adherent;
 import metier.BiblioException;
+import metier.Employe;
 import metier.EmpruntEnCours;
 import metier.Exemplaire;
 import metier.Utilisateur;
@@ -22,19 +24,21 @@ public class TestAdherentEnRetardOptionPane {
 		Exemplaire ex1 = new Exemplaire();
 
 
-		do {
+//		do {
 			String s = "";
 			s = JOptionPane.showInputDialog("Entrez un numéro d'adhérent");
 			// Clé Adhérent dans la DAO = 2
 			u1 = uDao.findByKey(Integer.parseInt(s));
-			if (u1 instanceof Adherent == false){
-				JOptionPane.showMessageDialog(null, "Erreur, numéro inconnu");
-			}
+//			if (u1 instanceof Adherent == false){
+//				JOptionPane.showMessageDialog(null, "Erreur, numéro inconnu");
+//			}
 
-		} while (u1 instanceof Adherent == false);
+//		} while (u1 instanceof Adherent == Utilisateur);
 
 		if (u1 instanceof Adherent)
-			JOptionPane.showMessageDialog(null, "Vous êtes connectés en tant qu'adhérent");
+			JOptionPane.showMessageDialog(null, "Vous êtes connecté en tant qu'adhérent");
+		if (u1 instanceof Employe)
+			JOptionPane.showMessageDialog(null, "Vous êtes connecté en tant qu'employé");
 
 		String s2 = JOptionPane.showInputDialog("Entrez un numéro d'exemplaire");
 		ex1 = exDao.findByKey(Integer.parseInt(s2));

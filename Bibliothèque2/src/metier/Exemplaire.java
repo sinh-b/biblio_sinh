@@ -12,47 +12,47 @@ public class Exemplaire {
 
 	/** L'identifiant d'un Exemplaire de Livre **/ 
 	private int idExemplaire;
-	
+
 	/** La date d'achat de l'Exemplaire par la Bibliothèque **/
 	private Date dateAchat;
-	
+
 	/** Le statut de disponiblité d'un exemplaire **/
 	private EnumStatusExemplaire status;
-	
+
 	/** Le numéro ISBN du Livre auquel se rapport un Exemplaire **/
 	private String isbn;
-	
+
 	/** L'Emprunt auquel un livre est rattaché **/
 	private EmpruntEnCours empruntConcerne;
-	
-	
-// CONSTRUCTEURS 	
-	
+
+
+	// CONSTRUCTEURS 	
+
 	public Exemplaire(int idExemplaire, Date dateAchat, EnumStatusExemplaire status, String isbn){
-	this.setIdExemplaire(idExemplaire);
-	this.setDateAchat(dateAchat);
-	this.setStatus(status);
-	this.setIsbn(isbn);
+		this.setIdExemplaire(idExemplaire);
+		this.setDateAchat(dateAchat);
+		this.setStatus(status);
+		this.setIsbn(isbn);
 	}
-	
-	
+
+
 	public Exemplaire(){
 		this(0, new Date(0), EnumStatusExemplaire.DISPONIBLE, "NA");
 	}
 
-	
-	
-// GETTERS SETTERS	
-	
+
+
+	// GETTERS SETTERS	
+
 	public EmpruntEnCours getEmpruntConcerne() {
 		return empruntConcerne;
 	}
 
-	
+
 	public void setEmpruntConcerne(EmpruntEnCours empruntConcerne) throws BiblioException {
 		this.empruntConcerne = empruntConcerne;
 		if (empruntConcerne.getExemplaire() == null)
-		empruntConcerne.setExemplaire(this);
+			empruntConcerne.setExemplaire(this);
 	}
 
 	public int getIdExemplaire() {
@@ -87,20 +87,21 @@ public class Exemplaire {
 		this.isbn = isbn;
 	}
 
-	
-// METHODES 	
-	
+
+	// METHODES 	
+
 	public void retourExemplaire(){
 		this.setStatus(EnumStatusExemplaire.DISPONIBLE);
 		this.getEmpruntConcerne().getUtilisateur().removeEmpruntEnCours(empruntConcerne);
 		EmpruntArchive empruntArchive = new EmpruntArchive(this, empruntConcerne.getDateEmprunt(), new Date());
+		System.out.println("Création d'un Emprunt Archivé" + empruntArchive);
 		empruntConcerne = null;
-		
+
 	}
-	
+
 	@Override
 	public String toString() {
-		return "idExemplaire : " + idExemplaire + ", ISBN : " + isbn + ", Emprunt concern� : " + empruntConcerne + ", Status : " + status;
+		return "idExemplaire : " + idExemplaire + ", ISBN : " + isbn + ", Emprunt concerné : " + empruntConcerne + ", Status : " + status;
 	}
 
 }

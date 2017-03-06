@@ -22,8 +22,9 @@ public class TestDeBaseOptionPane {
 	String s2 = JOptionPane.showInputDialog("Entrez un idExemplaire");
 	Exemplaire ex1 = eDao.findByKey(Integer.parseInt(s2));
 	EmpruntEnCours emprunt1 = new EmpruntEnCours(new Date(), u1, ex1);
-	JOptionPane.showMessageDialog(null, "Emprunt de l'exemplaire " + ex1.getIsbn() + " par l'Utilisateur n°"
+	JOptionPane.showMessageDialog(null, "Emprunt de l'exemplaire d'ISBN " + ex1.getIsbn() + " par l'Utilisateur n°"
 			+ u1.getIdUtilisateur() + " confirmé.");
+	
 	
 	
 	

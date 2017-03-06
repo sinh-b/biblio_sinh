@@ -1,6 +1,7 @@
 package test;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import dao.ExemplairesDao;
 import dao.UtilisateursDAO;
@@ -17,16 +18,18 @@ public class TestRetourExemplaire {
 		ExemplairesDao exDao = new ExemplairesDao();
 		Exemplaire ex1 = exDao.findByKey(1);
 		EmpruntEnCours emprunt1 = new EmpruntEnCours(new Date(), u1, ex1);
+		emprunt1.setDateEmprunt(new GregorianCalendar(2017,2,1).getTime());
 		
 		
-		System.out.println(u1.getListeEmprunt());
-		System.out.println(ex1.getStatus());
-		System.out.println(emprunt1.getExemplaire());
-		System.out.println("On retourne l'exemplaire \n\n");
+		System.out.println("Liste des emprunts de l'utilisateur \n" + u1.getListeEmprunt());
+//		System.out.println("\n\nOn vérifie que l'emprunt connait bien son exemplaire \n" +
+//		emprunt1.getExemplaire());
+		
+		System.out.println("\n\nOn retourne l'exemplaire et on vérifie la liste des emprunts");
 		ex1.retourExemplaire();
-		System.out.println(u1.getListeEmprunt());
-		System.out.println(ex1.getStatus());
-		System.out.println(emprunt1.getExemplaire());
+		System.out.println("\n\nListe des emprunts de l'utilisateur : \n" + u1.getListeEmprunt());
+		System.out.println("On vérifie le statut de l'exemplaire : \n" + emprunt1.getExemplaire());
+		
 		
 		
 		
