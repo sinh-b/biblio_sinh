@@ -16,7 +16,7 @@ public class FailEmprunt {
 		GridPane grid = new GridPane();
 		grid.add(empnok, 0, 0);
 		grid.add(bnok, 0, 1);
-		grid.getChildren().addAll(empnok,bnok);
+	//	grid.getChildren().addAll(empnok,bnok);
 		Scene scene = new Scene (grid, 400,400);
 		fenetrefail.setScene(scene);
 		fenetrefail.setTitle("fail");

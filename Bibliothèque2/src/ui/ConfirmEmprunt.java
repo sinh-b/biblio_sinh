@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 public class ConfirmEmprunt {
 
 	public static void afficher(){
+		System.out.println();
 		Label empok;
 		Button bok;
 		Stage fenetreok = new Stage();
@@ -17,7 +18,7 @@ public class ConfirmEmprunt {
 		GridPane grid = new GridPane();
 		grid.add(empok, 0, 0);
 		grid.add(bok, 0, 1);
-		grid.getChildren().addAll(empok,bok);
+		//grid.getChildren().addAll(empok,bok);
 		Scene scene = new Scene (grid, 400,400);
 		fenetreok.setScene(scene);
 		fenetreok.setTitle("Emprunt ok");

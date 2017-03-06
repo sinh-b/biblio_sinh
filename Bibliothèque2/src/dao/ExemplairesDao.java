@@ -15,7 +15,7 @@ public class ExemplairesDao {
 
 	
 
-private static Exemplaire[] exemplairesDB = {
+public static Exemplaire[] exemplairesDB = {
 		new Exemplaire(1, new Date(), EnumStatusExemplaire.DISPONIBLE, "975812"),
 		new Exemplaire(2, new Date(), EnumStatusExemplaire.DISPONIBLE, "975879"),
 		new Exemplaire(3, new Date(), EnumStatusExemplaire.PRETE, "975812"),
