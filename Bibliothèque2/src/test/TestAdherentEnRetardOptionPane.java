@@ -25,7 +25,7 @@ public class TestAdherentEnRetardOptionPane {
 		do {
 			String s = "";
 			s = JOptionPane.showInputDialog("Entrez un numéro d'adhérent");
-			// CLé Adhérent dans la DAO = 2
+			// Clé Adhérent dans la DAO = 2
 			u1 = uDao.findByKey(Integer.parseInt(s));
 			if (u1 instanceof Adherent == false){
 				JOptionPane.showMessageDialog(null, "Erreur, numéro inconnu");

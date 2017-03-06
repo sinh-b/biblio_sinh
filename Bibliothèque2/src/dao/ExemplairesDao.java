@@ -26,8 +26,10 @@ public static Exemplaire[] exemplairesDB = {
 
 /**
  * 
- * @param idExemplaire l'identifiant permettant de trouver un exemplaire dans la base de données.
- * @return Un Exemplaire en fonction de l'identifiant passé en paramètre
+ * @param idExemplaire l'identifiant permettant de trouver un exemplaire dans la base de donnï¿½es.
+ * @return Un E
+ * 
+ * xemplaire en fonction de l'identifiant passï¿½ en paramï¿½tre
  * 
  */
 public Exemplaire findByKey(int idExemplaire){
@@ -41,8 +43,8 @@ public Exemplaire findByKey(int idExemplaire){
 
 /**
  * 
- * @param status Le statut d'exemplaires que l'on cherche à trouver (DISPONIBLE, PRETE, SUPPRIME)
- * @return La collection (ArrayList) correspondant à tous les exemplaires dont le statut est celui passé en paramètres.
+ * @param status Le statut d'exemplaires que l'on cherche ï¿½ trouver (DISPONIBLE, PRETE, SUPPRIME)
+ * @return La collection (ArrayList) correspondant ï¿½ tous les exemplaires dont le statut est celui passï¿½ en paramï¿½tres.
  */
 public ArrayList<Exemplaire> findByStatus(EnumStatusExemplaire status){
 	ArrayList<Exemplaire> al = new ArrayList<Exemplaire>();

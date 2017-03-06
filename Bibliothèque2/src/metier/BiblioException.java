@@ -11,7 +11,7 @@ public class BiblioException extends Exception {
 	
 	
 	public BiblioException(){
-		this("Erreur générique sur applicatif Bibliothèque");
+		this("Erreur gÃ©nÃ©rique sur applicatif BibliothÃ¨que");
 	}
 	
 	

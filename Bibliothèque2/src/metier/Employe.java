@@ -11,12 +11,12 @@ import java.util.Date;
 public class Employe extends Utilisateur {
 
 	/**
-	 * Le code de matricule d'un Employé
+	 * Le code de matricule d'un EmployÃ©
 	 */
 	private String codeMatricule;
 	
 	/**
-	 * La catégorie à laquelle appartient un Employé
+	 * La catÃ©gorie Ã  laquelle appartient un EmployÃ©
 	 */
 	private EnumCategorieEmploye EnumCategorieEmploye; 
 	
@@ -57,7 +57,7 @@ public class Employe extends Utilisateur {
 	
 	@Override
 	public String toString() {
-		return super.toString() + ", Code Matricule : " + codeMatricule + ", Catégorie employé : " + 
+		return super.toString() + ", Code Matricule : " + codeMatricule + ", CatÃ©gorie employÃ© : " + 
 		EnumCategorieEmploye;
 	}
 	

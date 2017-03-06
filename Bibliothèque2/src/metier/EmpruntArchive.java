@@ -11,11 +11,11 @@ public class EmpruntArchive {
 
 	/** La date de restitution effective **/
 	private Date dateRestitutionEff;
-	/** La date à laquelle l'EmpruntArchive a été contracté **/
+	/** La date Ã  laquelle l'EmpruntArchive a Ã©tÃ© contractÃ© **/
 	private Date dateEmprunt;
 	/** L'Exemplaire (le Livre) auquel se rattache un emprunt **/
 	private Exemplaire exemplaire;
-	/** Objet utilisé pour afficher les date au format standard FR **/
+	/** Objet utilisÃ© pour afficher les date au format standard FR **/
 	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	
@@ -58,7 +58,7 @@ public class EmpruntArchive {
 	
 	@Override
 	public String toString() {
-		return "[EmpruntArchivé] Exemplaire concerné : " + exemplaire.getIsbn() + ", Date restitution effective : "
+		return "[EmpruntArchivÃ©] Exemplaire concernÃ© : " + exemplaire.getIsbn() + ", Date restitution effective : "
 				+ sdf.format(dateRestitutionEff) + ", Date emprunt : " + sdf.format(dateEmprunt);
 	}
 	

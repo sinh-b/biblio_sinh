@@ -13,7 +13,7 @@ public class ConfirmEmprunt {
 		Label empok;
 		Button bok;
 		Stage fenetreok = new Stage();
-		empok = new Label("Emprunt confirmé");
+		empok = new Label("Emprunt confirmÃ©");
 		bok = new Button("OKay");
 		GridPane grid = new GridPane();
 		grid.add(empok, 0, 0);

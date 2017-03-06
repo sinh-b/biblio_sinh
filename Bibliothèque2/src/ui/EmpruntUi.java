@@ -34,7 +34,7 @@ public class EmpruntUi{
 		grid.setVgap(40); // separation entre deux element 
 		grid.setHgap(10);
 		
-		// définition du label et placement de celui ci dans le gridPane 
+		// dÃ©finition du label et placement de celui ci dans le gridPane 
 		labelIdAdh = new Label ("Identifiant Adherent : ");
 		GridPane.setConstraints(labelIdAdh,0,0);
 
@@ -43,7 +43,7 @@ public class EmpruntUi{
 		GridPane.setConstraints(labelIdEx,0,1);
 		
 		// creation textfield user
-		userTF = new TextField("Spyca"); // possibilité de mettre un nom
+		userTF = new TextField("Spyca"); // possibilitÃ© de mettre un nom
 		GridPane.setConstraints(userTF,1,0);
 		
 		//creation textfield mdp

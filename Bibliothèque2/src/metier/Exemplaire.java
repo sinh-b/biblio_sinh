@@ -13,16 +13,16 @@ public class Exemplaire {
 	/** L'identifiant d'un Exemplaire de Livre **/ 
 	private int idExemplaire;
 	
-	/** La date d'achat de l'Exemplaire par la Biblioth�que **/
+	/** La date d'achat de l'Exemplaire par la Bibliothèque **/
 	private Date dateAchat;
 	
-	/** Le statut de disponiblit� d'un exemplaire **/
+	/** Le statut de disponiblité d'un exemplaire **/
 	private EnumStatusExemplaire status;
 	
-	/** Le num�ro ISBN du Livre auquel se rapport un Exemplaire **/
+	/** Le numéro ISBN du Livre auquel se rapport un Exemplaire **/
 	private String isbn;
 	
-	/** L'Emprunt auquel un livre est rattach� **/
+	/** L'Emprunt auquel un livre est rattaché **/
 	private EmpruntEnCours empruntConcerne;
 	
 	

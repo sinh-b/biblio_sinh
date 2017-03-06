@@ -13,7 +13,7 @@ public class Personne {
 	/** Le nom de la Personne **/
 	private String nom;
 	
-	/** Le prénom de la Personne **/
+	/** Le prÃ©nom de la Personne **/
 	private String prenom;
 	
 	/** La date de naissance de la Personne **/
@@ -22,7 +22,7 @@ public class Personne {
 	/** Le sexe de la personne **/
 	private String sexe;
 	
-	/** Objet utilisé pour formatter les dates **/
+	/** Objet utilisÃ© pour formatter les dates **/
 	protected static final SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 	
 

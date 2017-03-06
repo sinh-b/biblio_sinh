@@ -13,12 +13,12 @@ public class EmpruntEnCours {
 
 	/** La date de contraction de l'emprunt **/
 	private Date dateEmprunt;
-	/** L'utilisateur qui a contractÈ l'emprunt **/
+	/** L'utilisateur qui a contract√© l'emprunt **/
 	private Utilisateur utilisateur = new Utilisateur();
-	/** L'exemplaire (de Livre) concernÈ par cet Emprunt **/
+	/** L'exemplaire (de Livre) concern√© par cet Emprunt **/
 	private Exemplaire exemplaire;
 	
-	/** Objet utilisÈ pour formatter la Date au format FR **/
+	/** Objet utilis√© pour formatter la Date au format FR **/
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 
@@ -49,7 +49,7 @@ public class EmpruntEnCours {
 	
 	public void setExemplaire(Exemplaire e) throws BiblioException{
 		if (e.getStatus() == EnumStatusExemplaire.PRETE){
-			throw new BiblioException("Exemplaire dÈj‡ empruntÈ");
+			throw new BiblioException("Exemplaire d√©j√† emprunt√©");
 		} else {
 		this.exemplaire = e;
 		e.setEmpruntConcerne(this);

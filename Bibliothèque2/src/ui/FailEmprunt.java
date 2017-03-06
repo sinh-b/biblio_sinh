@@ -11,7 +11,7 @@ public class FailEmprunt {
 		Label empnok;
 		Button bnok;
 		Stage fenetrefail = new Stage();
-		empnok = new Label("Emprunt Echoué");
+		empnok = new Label("Emprunt EchouÃ©");
 		bnok = new Button("OKay");
 		GridPane grid = new GridPane();
 		grid.add(empnok, 0, 0);
